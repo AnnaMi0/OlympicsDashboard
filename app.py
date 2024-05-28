@@ -24,19 +24,7 @@ print(df.columns)
 st.dataframe(df)
 
 #-------SIDEBAR-------
-# Dropdown for single selection
-def create_selectbox_filter(title, column, df):
-    options = df[column].dropna().unique()
-    if column in ["NOC", "Sport", "Event"]:
-        options = sorted(options, key=lambda x: str(x))
-    return st.sidebar.selectbox(
-        title,
-        options=options,
-        index=0  # You can set this to -1 to have nothing selected initially, but Streamlit selectbox does not support no selection.
-    )
-
-# Multiselect for multiple selections, default to no selections
-def create_multiselect_filter(title, column, df):
+def create_multiselect_filter(title, column, df): # Multiselect for multiple selections, default to no selections
     options = df[column].dropna().unique()
     if column in ["NOC", "Sport", "Event"]:
         options = sorted(options, key=lambda x: str(x))
