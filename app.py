@@ -20,8 +20,6 @@ def get_data_from_csv():
     return df
 
 df = get_data_from_csv()
-print(df.columns)
-st.dataframe(df)
 
 #-------SIDEBAR-------
 def create_multiselect_filter(title, column, df): # Multiselect for multiple selections, default to no selections
